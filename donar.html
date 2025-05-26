@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate APP</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+       <img src="img/header.png" alt="Encabezado del sitio">
+    </div>
+    <nav>
+      <ul>
+       <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="registrarme.html">Registrarme</a></li>
+        <li><a href="donar.html">Donar</a></li>
+        <li><a href="buscar.html">Buscar</a></li>
+        <li><a href="novedades.html">Novedades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main class="main">
+  <section class="form-box">
+    <h2 class="form-title">Realizar una Donación</h2>
+
+    <form class="form" onsubmit="return validarFormularioDonacion()">
+      <div class="form-group">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Tipo de donación:</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Seleccionar...</option>
+          <option value="alimentos">Alimentos</option>
+          <option value="ropa">Ropa</option>
+          <option value="dinero">Dinero</option>
+          <option value="otros">Otros</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comentarios">Comentarios (opcional):</label>
+        <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="form-button">Donar</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+  <footer>
+    <p>Donate APP - Mail: donate.app@gmail.com - @donate.app </p>
+  </footer>
+
+</body>
+</html>

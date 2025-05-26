@@ -1,0 +1,397 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lazy Dog', cursive;
+  background-color: #FFFFFF;
+  color: #1B1B1B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado */
+header {
+  background-color: #2E7D32;
+  color: white;
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+
+
+/* Navegación */
+nav {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Subrayado animado */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  background-color: #388E3C; /* Un verde más claro al hacer hover */
+  border-radius: 5px;
+}
+
+
+/* Contenido principal */
+.main {
+  background-image: url('../img/fondo3.jpg');
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: auto;
+}
+
+/* Donar */
+.form-box {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #f1fef1;
+  border: 2px solid #a5d6a7;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Lazy Dog', sans-serif;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  color: #2e7d32;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Lazy Dog', sans-serif;
+  font-size: 1rem;
+}
+
+.form-button {
+  background-color: #66bb6a;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.form-button:hover {
+  background-color: #388e3c;
+}
+
+
+/*Voluntarios */
+.contenedor-voluntarios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.vol-box {
+  display: flex;
+  width: 80%;
+  height: 250px; /* Altura fija para todas las cajas */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.vol-box img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vol-texto {
+  padding: 1.5rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Inversión de orden para la segunda box */
+.vol-box.inverso {
+  flex-direction: row-reverse;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .vol-box {
+    flex-direction: column;
+    width: 95%;
+    height: auto; /* Permite que se adapte en pantallas pequeñas */
+  }
+
+  .vol-box img,
+  .vol-texto {
+    width: 100%;
+    height: auto;
+  }
+
+  .vol-box.inverso {
+    flex-direction: column;
+  }
+}
+
+
+/* Proyecto */
+.proyecto-box-vertical {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.proyecto-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.proyecto-texto {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsive opcional: más espacio entre imagen y texto en móvil */
+@media (max-width: 768px) {
+  .proyecto-box-vertical {
+    width: 95%;
+  }
+}
+
+
+/* Donar */
+.donaciones-box {
+  width: 80%;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: 'Lazy Dog', cursive;
+}
+
+.donaciones-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #f5fff7;
+}
+
+#buscador {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #b5e2c1;
+  margin-bottom: 1.5rem;
+  font-family: inherit;
+}
+
+#lista-donaciones {
+  list-style-type: none;
+  padding: 0;
+}
+
+.donacion-item {
+  background-color: #f5fff7;
+  border: 1px solid #c8e6c9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  color: #2d4739;
+  transition: background-color 0.3s ease;
+}
+
+.donacion-item:hover {
+  background-color: #e0f5e9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .donaciones-box {
+    width: 95%;
+  }
+}
+
+
+/* Registrarse */
+.registro-box {
+  width: 80%;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: 'Lazy Dog', cursive;
+}
+
+.registro-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #207f4c;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2d4739;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #b5e2c1;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+  border-color: #3cb371;
+}
+
+.boton-enviar {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.6rem 1.5rem;
+  background-color: #388E3C;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-family: 'Lazy Dog', cursive;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-enviar:hover {
+  background-color: #2d8f5c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .registro-box {
+    width: 95%;
+  }
+}
+
+/* Botón Volver */
+.volver {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.volver a {
+  background-color: #2E7D32;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.volver a:hover {
+  background-color: #388E3C;
+  text-decoration: underline;
+}
+
+/* Pie de página */
+footer {
+  background-color: #2E7D32;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
