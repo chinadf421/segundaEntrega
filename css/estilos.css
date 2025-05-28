@@ -1,41 +1,77 @@
-/* Reset básico */
+/* Reset básico */ 
 * {
-  margin: 0;
+  margin: 0; 
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho y alto de los elementos */
+  font-family: 'Roboto', sans-serif; /* Fuente por defecto */ 
 }
 
 body {
-  font-family: 'Lazy Dog', cursive;
-  background-color: #FFFFFF;
-  color: #1B1B1B;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  body {
+    /* Font styles */
+    font-family: 'Roboto', sans-serif; /* Use sans-serif as a fallback */
+    font-size: 1.2rem; /* Larger base font size */
+    line-height: 1.6; /* Spacing between lines */
+    text-align: center; /* Center all text within the body */
+    color: #2E7D32; /* Green text color */
+
+    /* Background styles */
+    background-image: url('../img/fondo.jpg'); /* Page background image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the background image */
+    background-size: cover; /* Make background image cover the entire element */
+    background-color: #f5fff7; /* Light background color for the body */
+    transition: background-color 0.3s ease; /* Smooth transition for background color changes */
+
+    /* Layout and spacing */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex; /* Enable flexbox for centering content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally within flex container */
+    justify-content: center; /* Center content vertically within flex container */
+    padding: 2rem; /* Internal padding around content */
+    margin: 0 auto; /* Center the body element on the page */
+    max-width: 1200px; /* Limit the maximum width of the body content */
+
+    /* Overflow handling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
 }
 
 /* Encabezado */
 header {
-  background-color: #2E7D32;
-  color: white;
+  background-color: #389160;
+  color: #389160;
   padding: 1rem;
-}
+  }
 
 .logo {
   display: flex;
-  align-items: center;
+  align-items: center; /* Alinea verticalmente la imagen y el texto */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 1rem; /* Espacio entre la imagen y el texto */
+  margin: 0 auto; /* Centra el logo en el header */
+  max-width: 1200px; /* Limita el ancho máximo del header */
+  padding: 1rem; /* Espacio interno del header */
+  background-color: #2E7D32; /* Fondo verde oscuro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
 }
 
 .logo img {
-  height: 50px;
-  margin-right: 1rem;
+  height: 250px;
+  margin-right: 0rem;
+  padding: auto; /* Ajusta el espacio entre la imagen y el texto */
+  transition: transform 0.3s ease; 
 }
 
 
 
 /* Navegación */
 nav {
-  display: flex;
+  display: flex; 
   justify-content: center; /* Centra horizontalmente */
 }
 
@@ -54,7 +90,11 @@ nav a {
   position: relative;
   padding: 0.5rem;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  font-family: 'Roboto', sans-serif; /* Fuente específica para los enlaces */
+  border-radius: 5px; /* Bordes redondeados para los enlaces */
+  padding: 0.5rem 1rem; /* Espacio interno para los enlaces */
+  background-color: #4CAF50; /* Color de fondo verde */}
 
 /* Subrayado animado */
 nav a::after {
@@ -70,20 +110,49 @@ nav a::after {
 
 nav a:hover::after {
   width: 100%;
+  /* Ancho completo al hacer hover */
+  background-color: #f5fff7; /* Color del subrayado al hacer hover */
+  /* Cambia el color del subrayado al hacer hover */
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 nav a:hover {
-  background-color: #388E3C; /* Un verde más claro al hacer hover */
+  background-color: #57af5b; /* Un verde más claro al hacer hover */
   border-radius: 5px;
+  color: #f5fff7; /* Cambia el color del texto al hacer hover */
+  text-decoration: none; /* Elimina el subrayado al hacer hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil al hacer hover */
+  transform: scale(1.05); /* Efecto de zoom al hacer hover */
+  font-weight: bold; /* Negrita al hacer hover */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto al hacer hover */
+  font-family: 'Roboto', sans-serif; /* Fuente específica para los enlaces */
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  padding: 0.5rem 1rem; /* Espacio interno para los enlaces */
+  border-radius: 5px; /* Bordes redondeados para los enlaces */
 }
 
 
 /* Contenido principal */
 .main {
-  background-image: url('../img/fondo3.jpg');
+  background-image: url('../img/fondo3.jpg'); /* Fondo del main */
   background-repeat: repeat;
   background-position: top left;
   background-size: auto;
+  padding: 2rem;
+  flex: 1; /* Permite que el main ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  color: #1B1B1B; /* Color del texto */
+  font-family: 'Roboto', sans-serif; /* Fuente específica para el contenido principal */
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  line-height: 1.6; /* Espaciado entre líneas */
+  text-align: center; /* Centra el texto */
+  margin: 0 auto; /* Centra el main en la página */
+  max-width: 1200px; /* Limita el ancho máximo del main */
+  padding: 2rem; /* Espacio interno del main */
 }
 
 /* Donar */
@@ -96,7 +165,10 @@ nav a:hover {
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-family: 'Lazy Dog', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #2e7d32;
+  transition: transform 0.3s ease;
 }
 
 .form-title {
@@ -110,17 +182,49 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #2e7d32;
+  transition: background-color 0.3s ease;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #f5fff7; /* Fondo claro para el formulario */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #2e7d32;
+  transition: background-color 0.3s ease;
+  padding: 0.8rem;
+  border-radius: 10px;
+  background-color: #f5fff7; /* Fondo claro para el grupo de formulario */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Asegura que el grupo de formulario ocupe todo el ancho */
+  max-width: 500px; /* Limita el ancho máximo del grupo de formulario */
+  margin: 0 auto; /* Centra el grupo de formulario */
+  padding: 1rem; /* Espacio interno del grupo de formulario */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #f5fff7; /* Fondo claro para el grupo de formulario */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .form-group label {
   font-weight: bold;
   margin-bottom: 0.4rem;
-  color: #2e7d32;
+  color: #438046;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
 .form-group input,
@@ -129,12 +233,14 @@ nav a:hover {
   padding: 0.6rem;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-family: 'Lazy Dog', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
+  color: #2e7d32;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-button {
-  background-color: #66bb6a;
+  background-color: #4baf50;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -143,10 +249,20 @@ nav a:hover {
   cursor: pointer;
   transition: background-color 0.3s ease;
   align-self: center;
+  font-family: 'Roboto', sans-serif; /* Fuente específica para el botón */
+  font-weight: bold; /* Negrita para el botón */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  width: 100%; /* Asegura que el botón ocupe todo el ancho */
+  max-width: 200px; /* Limita el ancho máximo del botón */
+  margin-top: 1rem; /* Espacio superior para el botón */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center; /* Centra el texto del botón */
+  align-items: center; /* Centra verticalmente el texto del botón */
 }
 
 .form-button:hover {
-  background-color: #388e3c;
+  background-color: #2c7c30;
 }
 
 
@@ -321,7 +437,7 @@ nav a:hover {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #2d4739;
+  color: #40815e;
 }
 
 .form-group input,
